@@ -1,0 +1,18 @@
+.background {
+  viewport-fill: #000000;
+}
+
+#title {
+  font-size: 35;
+  fill: white;
+  x: 50%;
+  text-anchor: middle;
+}
+
+#main {
+  font-size: 25;
+  fill: white;
+  x: 50%;
+  y: 65%;
+  text-anchor: middle;
+}

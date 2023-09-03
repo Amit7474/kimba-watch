@@ -1,0 +1,34 @@
+{
+  "name": "kimba-watch",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@fitbit/sdk": "~6.1.0",
+    "@fitbit/sdk-cli": "^1.7.3"
+  },
+  "fitbit": {
+    "appUUID": "7c94d747-490a-4ba1-98b3-cfa8f8e8a595",
+    "appType": "app",
+    "appDisplayName": "Kimba Watch",
+    "iconFile": "resources/sleeping.png",
+    "wipeColor": "#ffffff",
+    "requestedPermissions": [],
+    "buildTargets": [
+      "atlas",
+      "vulcan"
+    ],
+    "i18n": {},
+    "defaultLanguage": "en-US",
+    "requestedPermissions": [
+      "access_heart_rate",
+      "access_internet",
+      "run_background",
+      "access_sleep"
+    ]
+  },
+  "scripts": {
+    "build": "fitbit-build",
+    "debug": "fitbit"
+  }
+}

@@ -1,0 +1,4 @@
+<svg class="background">
+    <text id="title">App is running now</text>
+    <text id="main">Good night!</text>
+</svg>
