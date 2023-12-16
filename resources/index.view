@@ -1,4 +1,6 @@
 <svg class="background">
     <text id="title">App is running now</text>
     <text id="main">Good night!</text>
+    <text id="ip">No Vaporizer associated</text>
+    <use id="button-1" href="#icon-text-button" class="icon-text-button bottom application-fill" />
 </svg>

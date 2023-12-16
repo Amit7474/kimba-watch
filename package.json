@@ -13,19 +13,18 @@
     "appDisplayName": "Kimba Watch",
     "iconFile": "resources/sleeping.png",
     "wipeColor": "#ffffff",
-    "requestedPermissions": [],
-    "buildTargets": [
-      "atlas",
-      "vulcan"
-    ],
-    "i18n": {},
-    "defaultLanguage": "en-US",
     "requestedPermissions": [
       "access_heart_rate",
       "access_internet",
       "run_background",
       "access_sleep"
-    ]
+    ],
+    "buildTargets": [
+      "atlas",
+      "vulcan"
+    ],
+    "i18n": {},
+    "defaultLanguage": "en-US"
   },
   "scripts": {
     "build": "fitbit-build",
