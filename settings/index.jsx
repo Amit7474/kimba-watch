@@ -9,7 +9,7 @@ function KimbaSettings(props) {
 				}
 			>
 				<TextInput
-					label="Veporizer IP Address"
+					label="Diffuser IP Address"
 					placeholder="192.168.2.1"
                     settingsKey="ipAddr"
                     action="Save IP"

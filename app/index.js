@@ -8,8 +8,14 @@ import * as simpleSettings from "./device-settings";
 import document from "document";
 
 let ip = document.getElementById("ip");
-let btn = document.getElementById("button-1");
+let testBTN = document.getElementById("button-1");
+let improveSleep = document.getElementById("button-2");
+let improveMemory = document.getElementById("button-3");
+let optionsScreen = document.getElementById("optionsScreen");
+let mainScreen = document.getElementById("mainScreen");
+let optionButton = document.getElementById("option-button");
 let controllerIP = '';
+var shouldSendInfo = false;
 
 // Settings initialize
 function settingsCallback(data) {
@@ -53,10 +59,41 @@ function sendCommandToController(sleepStatus) {
 	let payload = {type: 'command', value: values};
 	sendMessageToCompanion(payload);
 }
+
+function showMainScreen(buttonLabel) {
+	optionButton.text = buttonLabel;
+	optionsScreen.style.display = "none";
+	mainScreen.style.display = "inline";
+	shouldSendInfo = true;
+  }
+
+  function showOptionScreen() {
+	optionsScreen.style.display = "inline";
+	mainScreen.style.display = "none";
+	shouldSendInfo = false;
+  }
+
 // For testingg!!!
-btn.addEventListener("click", (evt) => {
+testBTN.addEventListener("click", (evt) => {
 	sendCommandToController('asleep');
 });
+
+improveSleep.addEventListener("click", (evt) => {
+	showMainScreen("improve sleep");
+});
+
+improveMemory.addEventListener("click", (evt) => {
+	showMainScreen("improve memory");
+});
+
+// handling back press
+document.onkeypress = function(e) {
+	console.log("Key pressed: " + e.key);
+	  if (e.key==="back" && shouldSendInfo) {
+		e.preventDefault();
+		showOptionScreen();
+	  }
+}
 
 var heartRateReading = "--";
 var accelerometerReading = {};
@@ -140,19 +177,23 @@ messaging.peerSocket.onError = (err) => {
 };
 
 function sendValuesToCompanion() {
-	let values = {
-		spreadSheetId: spreadsheetID,
-		hr: heartRateReading,
-		accx: accelerometerReading.x,
-		accy: accelerometerReading.y,
-		accz: accelerometerReading.z,
-		sleepStatus: sleepStatus,
-		gyrx: gyroscopeReading.x,
-		gyry: gyroscopeReading.y,
-		gyrz: gyroscopeReading.z,
-	};
-	let payload = {type: 'vitals', value: values};
-	sendMessageToCompanion(payload);
+	console.log('here');
+	if (shouldSendInfo) {
+		console.log('sending');
+		let values = {
+			spreadSheetId: spreadsheetID,
+			hr: heartRateReading,
+			accx: accelerometerReading.x,
+			accy: accelerometerReading.y,
+			accz: accelerometerReading.z,
+			sleepStatus: sleepStatus,
+			gyrx: gyroscopeReading.x,
+			gyry: gyroscopeReading.y,
+			gyrz: gyroscopeReading.z,
+		};
+		let payload = { type: "vitals", value: values };
+		sendMessageToCompanion(payload);
+	}
 }
 
 setInterval(sendValuesToCompanion, 5000);

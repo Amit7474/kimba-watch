@@ -1,27 +1,74 @@
-.background {
-  viewport-fill: #000000;
+#mainScreen {
+	viewport-fill: #000000;
+}
+
+#inner-container {
+  y: 20;
+}
+
+.application-fill {
+	fill: fb-orange;
+}
+.foreground-fill {
+	fill: fb-white;
+}
+.background-fill {
+	fill: fb-black;
+}
+
+.option-button-fill {
+  fill: fb-light-gray;
+}
+
+#option-button #text{
+  text-buffer: "---";
+}
+
+#button-2 {
+  y: 70;
+
+}
+
+#button-3 {
+  y: 200;
+}
+
+#button-2 #text {
+	text-buffer: "Improve sleep";
+}
+
+#button-2 #image {
+	href: "sleep.png";
+}
+
+#button-3 #text {
+	text-buffer: "Improve memory";
+}
+
+#button-3 #image {
+	href: "memorization.png";
 }
 
 #title {
-  font-size: 35;
-  fill: white;
-  y: 40%;
-  x: 50%;
-  text-anchor: middle;
+	font-size: 35;
+	fill: white;
+	y: 40%;
+	x: 50%;
+	text-anchor: middle;
 }
 
 #main {
-  font-size: 25;
-  fill: white;
-  x: 50%;
-  y: 52%;
-  text-anchor: middle;
+	font-size: 25;
+	fill: white;
+	x: 50%;
+	y: 52%;
+	text-anchor: middle;
 }
 
 #ip {
-    font-size: 25;
-    fill: white;
-    x: 50%;
-    y: 65%;
-    text-anchor: middle;
-  }
+	font-size: 25;
+	fill: white;
+	x: 50%;
+	y: 65%;
+	text-anchor: middle;
+}

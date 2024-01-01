@@ -1,6 +1,15 @@
-<svg class="background">
-    <text id="title">App is running now</text>
-    <text id="main">Good night!</text>
-    <text id="ip">No Vaporizer associated</text>
-    <use id="button-1" href="#icon-text-button" class="icon-text-button bottom application-fill" />
+<svg>
+    <svg id="optionsScreen">
+        <use id="button-2" href="#icon-text-button" class="icon-text-button primary application-fill" />
+        <use id="button-3" href="#icon-text-button" class="icon-text-button secondary application-fill" />
+    </svg>
+    <svg id="mainScreen" display="none">
+        <use id="option-button" href="#text-button" class="text-button option-button-fill"/>
+        <use id="inner-container">
+            <text id="title">App is running now</text>
+            <text id="main">Good night!</text>
+            <text id="ip">No Diffuser associated</text>
+        </use>
+        <use id="button-1" href="#icon-text-button" class="icon-text-button bottom" />
+    </svg>
 </svg>
